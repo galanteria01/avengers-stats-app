@@ -16,7 +16,7 @@
         android:padding="5pt">
 
         <ImageView
-            android:id="@+id/ironImage"
+            android:id="@+id/ivBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -28,7 +28,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/ironName"
+                android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -39,7 +39,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/ironDes"
+                android:id="@+id/tvDes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
