@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
             myView.tvName.text = avenger.name!!
             myView.tvDes.text = avenger.des!!
             myView.ivBar.setImageResource(avenger.image!!)
-            myView.ivBar.setOnClickListener {
+            myView.ticketAvenger.setOnClickListener {
                 val intent = Intent(context,moreAbout::class.java)
                 intent.putExtra("name",avenger.name!!)
                 intent.putExtra("des",avenger.des!!)
