@@ -24,17 +24,23 @@ class MainActivity : AppCompatActivity() {
 
         // start loading avengers
         listOfAvengers.add(
-            Avengers("Iron Man","Leader of Avengers",R.drawable.ironman,false))
+            Avengers("Iron Man","Leader of Avengers"
+                ,R.drawable.ironman,false,R.string.ironman.toString()))
         listOfAvengers.add(
-            Avengers("Thor","God of Thunder",R.drawable.thor,false))
+            Avengers("Thor","God of Thunder"
+                ,R.drawable.thor,false,R.string.thor.toString()))
         listOfAvengers.add(
-            Avengers("Hulk","The gamma machine",R.drawable.hulk,false))
+            Avengers("Hulk","The gamma machine"
+                ,R.drawable.hulk,false,R.string.hulk.toString()))
         listOfAvengers.add(
-            Avengers("Hawkeye","Unfuckwithable archer",R.drawable.hawkeye,true))
+            Avengers("Hawkeye","Unfuckwithable archer"
+                ,R.drawable.hawkeye,true,R.string.hawkeye.toString()))
         listOfAvengers.add(
-            Avengers("Captain America","Super Soldier",R.drawable.captain,false))
+            Avengers("Captain America","Super Soldier"
+                ,R.drawable.captain,false,R.string.captain.toString()))
         listOfAvengers.add(
-            Avengers("Black Widow","Shield Spy",R.drawable.widow,true))
+            Avengers("Black Widow","Shield Spy"
+                ,R.drawable.widow,true,R.string.widow.toString()))
 
 
         adapter = AvengersAdapter(this,listOfAvengers)
@@ -75,6 +81,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("name",avenger.name!!)
                 intent.putExtra("des",avenger.des!!)
                 intent.putExtra("image",avenger.image!!)
+                intent.putExtra("subtitle",avenger.subtitle)
                 context!!.startActivity(intent)
 
             }

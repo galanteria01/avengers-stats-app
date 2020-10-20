@@ -11,11 +11,11 @@ class moreAbout : AppCompatActivity() {
 
         val bun: Bundle? = intent.extras
         var name = bun?.getString("name")
-        var des = bun?.getString("des")
+        var subtitle = bun?.getString("subtitle")
         var image = bun!!.getInt("image")
         tvPicture.setImageResource(image)
         tvTitle.text = name
-        tvSubtitle.text = des
+        tvSubtitle.text = subtitle
 
 
 
