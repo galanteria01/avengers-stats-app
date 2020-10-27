@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat.startActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.avengers_ticket.*
 import kotlinx.android.synthetic.main.avengers_ticket.view.*
+import java.util.EnumSet.range
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,26 +22,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        dummyData()
+        loadApi()
 
         // start loading avengers
-        listOfAvengers.add(
-            Avengers("Iron Man","Leader of Avengers"
-                ,R.drawable.ironman,false,R.string.ironman.toString()))
-        listOfAvengers.add(
-            Avengers("Thor","God of Thunder"
-                ,R.drawable.thor,false,R.string.thor.toString()))
-        listOfAvengers.add(
-            Avengers("Hulk","The gamma machine"
-                ,R.drawable.hulk,false,R.string.hulk.toString()))
-        listOfAvengers.add(
-            Avengers("Hawkeye","Unfuckwithable archer"
-                ,R.drawable.hawkeye,true,R.string.hawkeye.toString()))
-        listOfAvengers.add(
-            Avengers("Captain America","Super Soldier"
-                ,R.drawable.captain,false,R.string.captain.toString()))
-        listOfAvengers.add(
-            Avengers("Black Widow","Shield Spy"
-                ,R.drawable.widow,true,R.string.widow.toString()))
+
 
 
         adapter = AvengersAdapter(this,listOfAvengers)
@@ -89,4 +75,37 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
-}
+
+    fun dummyData(){
+        listOfAvengers.add(
+            Avengers("Iron Man","Leader of Avengers"
+                ,R.drawable.ironman,false,R.string.ironman.toString()))
+        listOfAvengers.add(
+            Avengers("Thor","God of Thunder"
+                ,R.drawable.thor,false,R.string.thor.toString()))
+        listOfAvengers.add(
+            Avengers("Hulk","The gamma machine"
+                ,R.drawable.hulk,false,R.string.hulk.toString()))
+        listOfAvengers.add(
+            Avengers("Hawkeye","Unfuckwithable archer"
+                ,R.drawable.hawkeye,true,R.string.hawkeye.toString()))
+        listOfAvengers.add(
+            Avengers("Captain America","Super Soldier"
+                ,R.drawable.captain,false,R.string.captain.toString()))
+        listOfAvengers.add(
+            Avengers("Black Widow","Shield Spy"
+                ,R.drawable.widow,true,R.string.widow.toString()))
+    }
+
+    fun loadApi(){
+        ApiData.apiData( object :ApiData.Response{
+            override fun data(data: Model.Result, status: Boolean) {
+                if(status){
+                    val name:String = data.name
+                }
+            }
+
+        })
+        }
+    }
+
