@@ -71,10 +71,10 @@ class MainActivity() : AppCompatActivity() {
 
 
 
-                var image = collection.
-                if(response == "success") {
-                    listOfHeroes.add(Hero(response, id, name, null,))
-                }
+                var image = collection.image[0].url
+//                if(response == "success") {
+//                    listOfHeroes.add(Hero(response, id, name, null,))
+//                }
 
             }
 

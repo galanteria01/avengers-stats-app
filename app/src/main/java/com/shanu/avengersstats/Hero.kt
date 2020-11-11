@@ -1,10 +1,8 @@
 package com.shanu.avengersstats
 
-import android.media.Image
-
 class Hero(var response:String, var id:Int, var name:String, var powerstats:List<Power>,
             var biography:List<Bio>, var appearance:List<Appear>,var work:List<Work>
-           ,var connection:List<ConnectionHero>,var image:List<Image> ) {
+           ,var connection:List<ConnectionHero>,var image:List<Imagery> ) {
 
 }
 
@@ -31,6 +29,6 @@ class ConnectionHero(var groupAffiliation:String,var relatives:String){
 
 }
 
-class Image(var url:String){
+class Imagery(var url:String){
 
 }
