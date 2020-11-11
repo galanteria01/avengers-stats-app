@@ -4,7 +4,7 @@ import android.media.Image
 
 class Hero(var response:String, var id:Int, var name:String, var powerstats:List<Power>,
             var biography:List<Bio>, var appearance:List<Appear>,var work:List<Work>
-           ,var connection:List<ConnectionHero>,var image:Image ) {
+           ,var connection:List<ConnectionHero>,var image:List<Image> ) {
 
 }
 
@@ -28,5 +28,9 @@ class Work(var occupation:String,var base:String){
 }
 
 class ConnectionHero(var groupAffiliation:String,var relatives:String){
+
+}
+
+class Image(var url:String){
 
 }

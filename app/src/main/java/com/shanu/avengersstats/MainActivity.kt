@@ -28,6 +28,7 @@ import java.util.EnumSet.range
 
 class MainActivity() : AppCompatActivity() {
     var listOfAvengers = ArrayList<Avengers>()
+    var listOfHeroes = ArrayList<Hero>()
     var adapter: AvengersAdapter? = null
 
 
@@ -37,7 +38,6 @@ class MainActivity() : AppCompatActivity() {
         dummyData()
         adapter = AvengersAdapter(this, listOfAvengers)
         tvAvengers.adapter = adapter
-
         fetchJson()
     }
 
@@ -54,7 +54,28 @@ class MainActivity() : AppCompatActivity() {
                 val body = response.body!!.string()
                 println(body)
                 val gson = GsonBuilder().create()
-                val homefeed = gson.fromJson(body,Hero::class.java)
+                val collection = gson.fromJson(body,Hero::class.java)
+                val name = collection.name
+                val response = collection.response
+                var id = collection.id
+
+                var intelligence = collection.powerstats[0].intelligence
+                var strength = collection.powerstats[1].strength
+                val speed = collection.powerstats[2].speed
+                var durability = collection.powerstats[3].durability
+                val power = collection.powerstats[4].power
+                var combat = collection.powerstats[5].combat
+                var powerstats = Power(intelligence,strength,speed,durability,power,combat)
+                val fullName = collection.biography[0].fullName
+                val alterEgo = collection.biography[0].fullName
+
+
+
+                var image = collection.
+                if(response == "success") {
+                    listOfHeroes.add(Hero(response, id, name, null,))
+                }
+
             }
 
         })
